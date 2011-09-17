@@ -1,0 +1,4 @@
+name: starman
+
+processes:
+  web: starman --listen $VCAP_APP_HOST:$VCAP_APP_PORT app.psgi
