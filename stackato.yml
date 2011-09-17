@@ -2,3 +2,12 @@ name: starman
 
 processes:
   web: starman --listen $VCAP_APP_HOST:$VCAP_APP_PORT app.psgi
+
+hooks:
+  post-staging: ls -l
+  pre-running: env
+
+env:
+  STARMAN_DEBUG: 1
+
+mem: 64M
