@@ -1,7 +1,7 @@
 name: starman
 
 processes:
-  web: starman --listen $VCAP_APP_HOST:$VCAP_APP_PORT app.psgi
+  web: starman --listen $VCAP_APP_HOST:$VCAP_APP_PORT --workers 2 app.psgi
 
 hooks:
   post-staging: ls -l
